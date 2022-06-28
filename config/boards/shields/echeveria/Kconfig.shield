@@ -1,0 +1,5 @@
+config SHIELD_ECHEVERIA_LEFT
+    def_bool $(shields_list_contains,echeveria_left)
+
+config SHIELD_ECHEVERIA_RIGHT
+    def_bool $(shields_list_contains,echeveria_right)
