@@ -1,0 +1,13 @@
+file_format: "1"
+id: echeveria
+name: Echeveria
+type: shield
+url: https://github.com/bowlingpinbird/zmk-config/config/boards/shields/echeveria
+requires: [pro_micro]
+exposes:
+features:
+  - keys
+  - encoder
+siblings:
+  - echeveria_left
+  - echeveria_right
