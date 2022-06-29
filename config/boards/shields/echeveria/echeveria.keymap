@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define DEFAULT 0
+#define FUNCTION 1
 
 / {
     keymap {
@@ -9,13 +10,12 @@
 
         default_layer {
             bindings = <
-                &kp K_PLAY_PAUSE    &kp GRAVE &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6         &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0 &kp MINUS &kp EQUAL &kp BACKSPACE &kp ESCAPE
-                                    &kp TAB   &kp Q        &kp W        &kp E        &kp R        &kp T                             &kp Y        &kp U        &kp I        &kp O        &kp P     &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH &kp DEL
-                &bootloader         &kp CAPSLOCK &kp A &kp S &kp D &kp F &kp G                                                      &kp H &kp J &kp K &kp L &kp SEMICOLON &kp APOSTROPHE &kp ENTER
-                                    &kp LEFT_SHIFT &kp Z &kp X &kp C &kp V &kp B                                                    &kp N &kp M &kp COMMA &kp PERIOD &kp SLASH &kp RIGHT_SHIFT &kp UP_ARROW &bootloader
-                            &kp LEFT_CONTROL &kp LEFT_WIN     &kp LALT      &kp SPACE                                           &kp SPACE &kp RIGHT_ALT &kp NUMBER_0 /*fn*/ &kp RIGHT_CONTROL &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW
+                &kp K_PLAY_PAUSE    &kp GRAVE      &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6         &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0 &kp MINUS     &kp EQUAL              &kp BACKSPACE                   &kp ESCAPE
+                                    &kp TAB        &kp Q        &kp W        &kp E        &kp R        &kp T                             &kp Y        &kp U        &kp I        &kp O        &kp P         &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH       &kp DEL
+                &bootloader         &kp CAPSLOCK   &kp A        &kp S        &kp D        &kp F        &kp G                             &kp H        &kp J        &kp K        &kp L        &kp SEMICOLON &kp APOSTROPHE   &kp ENTER
+                                    &kp LEFT_SHIFT &kp Z        &kp X        &kp C        &kp V        &kp B                             &kp N        &kp M        &kp COMMA    &kp PERIOD   &kp SLASH     &kp RIGHT_SHIFT           &kp UP_ARROW                 &bootloader
+                            &kp LEFT_CONTROL   &kp LEFT_WIN     &kp LALT                 &kp SPACE                                       &kp SPACE                &kp RIGHT_ALT &kp 1        &kp RIGHT_CONTROL        &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW
             >;
-
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
     };
