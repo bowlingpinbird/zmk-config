@@ -1,7 +1,10 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT 0
+#define FUNCTION 1
 
 / {
     keymap {
@@ -9,12 +12,24 @@
 
         default_layer {
             bindings = <
-                &kp K_PLAY_PAUSE    &kp GRAVE &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6         &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0 &kp MINUS &kp EQUAL &kp BACKSPACE &kp ESCAPE
-                                    &kp TAB   &kp Q        &kp W        &kp E        &kp R        &kp T                             &kp Y        &kp U        &kp I        &kp O        &kp P     &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH &kp DEL
-                &bootloader         &kp CAPSLOCK &kp A &kp S &kp D &kp F &kp G                                                      &kp H &kp J &kp K &kp L &kp SEMICOLON &kp APOSTROPHE &kp ENTER
-                                    &kp LEFT_SHIFT &kp Z &kp X &kp C &kp V &kp B                                                    &kp N &kp M &kp COMMA &kp PERIOD &kp SLASH &kp RIGHT_SHIFT &kp UP_ARROW &bootloader
-                            &kp LEFT_CONTROL &kp LEFT_WIN     &kp LALT      &kp SPACE                                           &kp SPACE &kp RIGHT_ALT &kp NUMBER_0 /*fn*/ &kp RIGHT_CONTROL &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW
+                                 &kp GRAVE      &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6         &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0 &kp MINUS     &kp EQUAL              &kp BACKSPACE
+                                 &kp TAB        &kp Q        &kp W        &kp E        &kp R        &kp T                             &kp Y        &kp U        &kp I        &kp O        &kp P         &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BACKSLASH
+                &kp C_PLAY_PAUSE &kp CAPSLOCK   &kp A        &kp S        &kp D        &kp F        &kp G                             &kp H        &kp J        &kp K        &kp L        &kp SEMICOLON &kp APOSTROPHE   &kp ENTER
+                &kp ESC          &kp LEFT_SHIFT &kp Z        &kp X        &kp C        &kp V        &kp B                             &kp N        &kp M        &kp COMMA    &kp PERIOD   &kp SLASH     &kp RIGHT_SHIFT           &kp UP_ARROW
+                                 &kp LEFT_CONTROL   &kp LEFT_WIN     &kp LALT                 &kp SPACE                               &kp SPACE       &kp RIGHT_ALT       &mo 1   &kp RIGHT_CONTROL        &kp LEFT_ARROW &kp DOWN_ARROW &kp RIGHT_ARROW
             >;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        function_layer {
+            bindings = <
+                                 &trans      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                            &kp F6       &kp F7       &kp F8       &kp F9       &kp F10       &kp F11     &kp F12              &kp DEL
+                                 &trans      &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans       &trans                            &trans       &trans       &kp INSERT   &trans       &trans       &trans       &trans       &trans       
+                &trans           &trans      &out OUT_BLE &out OUT_USB &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans       &trans       
+                &bt BT_CLR           &trans      &trans       &trans       &trans       &trans       &trans                            &trans       &trans       &trans       &trans       &trans       &trans                       &trans 
+                                 &trans            &trans            &trans                  &trans                                          &trans        &trans                 &trans     &trans                       &trans &trans &trans
+            >;
+            sensor-bindings = <&inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC>;
         };
     };
 };
